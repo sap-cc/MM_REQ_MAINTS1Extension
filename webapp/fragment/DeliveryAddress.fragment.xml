@@ -1,0 +1,73 @@
+<!--
+
+    Copyright (C) 2009-2021 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:smartForm="sap.ui.comp.smartform" xmlns="sap.m">
+	<smartForm:SmartForm id="smartForm2" app:defaultDropDownDisplayBehaviour="idAndDescription" class="editableForm" editable="true">
+		<!--<smartForm:layout>
+			<smartForm:Layout labelSpanL="3" labelSpanM="2" emptySpanL="4" emptySpanM="4" columnsL="2" columnsM="2"/>
+		</smartForm:layout>-->
+		<smartForm:layout>
+			<smartForm:Layout columnsM="1"/>
+		</smartForm:layout>
+		<smartForm:Group id="idgroupDelAdress">
+			<smartForm:GroupElement id="idgroupElementAddrType">
+				<smartField:SmartField id="idAddrType" value="{AddressType}" tooltip="{AddressType}" change="onAutoSave">
+					<smartField:configuration>
+						<smartField:Configuration id="idselectionConfiguration" controlType="selection" displayBehaviour="descriptionOnly"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+				<Text id="idAddressType" text="{parts:[{path:'AddressType'}, {path:'Plant'}, {path:'ExtPlantForPurg'}],formatter:'.formatter.plantInDeliveryAddr'}" />
+			</smartForm:GroupElement>
+		</smartForm:Group>	
+		<smartForm:Group id="idgroupDelAdr">
+			<smartForm:GroupElement id="idgroupElementTitle">
+				<smartField:SmartField id="idTitle" value="{FormOfAddress}" tooltip="{FormOfAddress}">
+					<smartField:configuration>
+						<smartField:Configuration id="idFormOfAddress" controlType="selection" displayBehaviour="descriptionOnly"/>
+					</smartField:configuration>
+				</smartField:SmartField>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrFullName">
+				<smartField:SmartField id="fullName" value="{FullName}" editable="{viewProperties>/editable}" tooltip="{FullName}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelCareOfNameName">
+				<smartField:SmartField id="careOfName" value="{CareOfName}" editable="{viewProperties>/editable}" tooltip="{CareOfName}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrPhone">
+				<smartField:SmartField id="phone" value="{PhoneNumber1}" change="phoneNumber1Validation" editable="{viewProperties>/editable}"
+					tooltip="{PhoneNumber1}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrFax">
+				<smartField:SmartField id="fax" value="{FaxNumber}" change="faxNumberValidation" editable="{viewProperties>/editable}" tooltip="{FaxNumber}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrEmail">
+				<smartField:SmartField id="email" value="{EmailAddress}" editable="{viewProperties>/editable}"
+					tooltip="{EmailAddress}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+		<smartForm:Group id="idgroupDelAdrDetails">
+			<smartForm:GroupElement id="idgroupElementDelAdrHouseNo">
+				<smartField:SmartField id="houseNo" value="{AddressStreetName}" initialise="setDefaultValue" editable="{viewProperties>/editable}"
+					tooltip="{AddressStreetName}"/>
+				<smartField:SmartField id="houseNumber" value="{AddressHouseNumber}" editable="{viewProperties>/editable}" tooltip="{AddressHouseNumber}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrDistrict">
+				<smartField:SmartField id="district" value="{AddressCityName}" editable="{viewProperties>/editable}" tooltip="{AddressCityName}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrPoCity">
+				<smartField:SmartField id="poCity" value="{AddressPostalCode}" editable="{viewProperties>/editable}" tooltip="{AddressPostalCode}"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrCountry">
+				<smartField:SmartField id="country" editable="{viewProperties>/editable}" tooltip="{AddressCountry}"
+					value="{path: 'AddressCountry', type: 'sap.ui.model.type.String', constraints: { minLength: 1, maxLength: 3 } }"/>
+			</smartForm:GroupElement>
+			<smartForm:GroupElement id="idgroupElementDelAdrRegion">
+				<smartField:SmartField id="region" value="{AddressRegion}" editable="{viewProperties>/editable}" tooltip="{AddressRegion}"/>
+			</smartForm:GroupElement>
+		</smartForm:Group>
+	</smartForm:SmartForm>
+</core:FragmentDefinition>

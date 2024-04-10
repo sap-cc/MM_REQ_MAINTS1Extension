@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	id="fragObjHelp">
+	
+	<SelectDialog
+		title="{i18n>accObject}"
+		items="{ path: 'accountobject>/results', factory: '.objectFactory' }"
+		search=".onObjectValueHelpSearch"
+		confirm=".onObjectValueHelpClose"
+		cancel=".onObjectValueHelpClose">
+	</SelectDialog>
+
+</core:FragmentDefinition>

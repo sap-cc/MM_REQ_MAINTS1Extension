@@ -1,0 +1,69 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "ui.s2p.mm.requisition.maintain.s1.MM_REQ_MAINTS1Extension",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.2"
+		},
+		"title": "{{appTitle}}",
+		"i18n": "i18n/i18n.properties"
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://task",
+			"favIcon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"dependencies": {
+			"minUI5Version": "1.90.2"
+		},
+		"componentUsages": {
+			"attachmentReuseComponent": {
+				"name": "sap.se.mi.plm.lib.attachmentservice.attachment",
+				"settings": {}
+			}
+		},
+		"extends": {
+			"component": "ui.s2p.mm.requisition.maintain.s1",
+			"extensions": {
+				"sap.ui.controllerExtensions": {
+					"ui.s2p.mm.requisition.maintain.s1.controller.Search": {
+						"controllerName": "ui.s2p.mm.requisition.maintain.s1.MM_REQ_MAINTS1Extension.controller.SearchCustom"
+					},
+					"ui.s2p.mm.requisition.maintain.s1.controller.CartOverview": {
+						"controllerName": "ui.s2p.mm.requisition.maintain.s1.MM_REQ_MAINTS1Extension.controller.CartOverviewCustom"
+					}
+				},
+				"sap.ui.viewReplacements": {
+					"ui.s2p.mm.requisition.maintain.s1.view.ItemDetails": {
+						"viewName": "ui.s2p.mm.requisition.maintain.s1.MM_REQ_MAINTS1Extension.view.ItemDetailsCustom",
+						"type": "XML"
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/srail/mm_req_ext/webapp",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,131 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<View controllerName="ui.s2p.mm.requisition.maintain.s1.controller.ItemDetails"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:smartForm="sap.ui.comp.smartform" xmlns="sap.m">
+	<semantic:FullscreenPage class="sapUiFioriObjectPage" enableScrolling="true" id="page" navButtonPress="onBack" showNavButton="true"
+		title="{i18n>itemDetails}">
+		<semantic:content>
+			<l:Grid id="reworkGrid" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="reworkPanelItemDet" width="auto" headerText="{i18n>rework}" visible="{viewProperties>/reworkFacetVisible}"
+						backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+						<content>
+							<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.Rework" type="XML"/>
+						</content>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="generalDataGrid" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="iPanelGeneralData" width="auto" backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+						<headerToolbar>
+							<Toolbar>
+								<Title level="H2" text="{i18n>generalData}" tooltip="{i18n>generalData} "/>
+							</Toolbar>
+						</headerToolbar>
+						<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.GeneralData" type="XML"/>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="deliveryAddrGrid" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="idPanelDeliveryAddress" width="auto" backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+						<headerToolbar>
+							<Toolbar>
+								<Title level="H2" text="{i18n>overviewDeliveryAddress}" tooltip="{i18n>overviewDeliveryAddress}"/>
+							</Toolbar>
+						</headerToolbar>
+						<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.MM_REQ_MAINTS1Extension.fragment.DeliveryAddress" type="XML"/>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="formAccForPS" visible="{FundMgmtIsActive}" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="idPanelAccforPS" width="auto" backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+						<headerToolbar>
+							<Toolbar>
+								<Title level="H2" text="{i18n>accountassignment}" tooltip="{i18n>accountassignment}"/>
+							</Toolbar>
+						</headerToolbar>
+						<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.AccountingFormPS" type="XML"/>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="listAccAssignment" visible="{viewProperties>/accAssignmentCompVisible}" defaultSpan="L12 M12 S12" width="auto"
+				class="sapUiResponsiveMargin">
+				<l:content>
+					<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.AccountAssignment" type="XML"/>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="idPanelAttachments" defaultSpan="L12 M12 S12" width="auto" class="sapUiResponsiveMargin">
+				<l:content>
+					<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.Attachment" type="XML"/>
+				</l:content>
+			</l:Grid>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="idSourceofSupplyPanel" width="auto" backgroundDesign="Transparent" class="sapUiResponsiveMargin sapUiNoContentPadding">
+						<headerToolbar>
+							<Toolbar>
+								<Title level="H2" text="{i18n>sourceOfSupply}" tooltip="{i18n>sourceOfSupply}"/>
+								<ToolbarSpacer/>
+								<Button id="addSupplier" press="onAddSupplierBtnPress" enabled="{viewProperties>/editable}"
+									visible="{viewProperties>/addSupplierBtnVisible}" text="{i18n>Add}" tooltip="{i18n>addSourceOfSupply}"/>
+							</Toolbar>
+						</headerToolbar>
+						<Panel id="sourceOfSupply" backgroundDesign="Transparent">
+							<content/>
+						</Panel>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="idReuseWorkFlowGridItem" headerText="{i18n>appDetails}" visible="false" backgroundDesign="Transparent"
+						class="sapUiResponsiveMargin" width="auto">
+						<core:ComponentContainer id="workflowCompContainerItemID"/>
+					</Panel>
+					<Panel id="idPanelForCentralApproval" headerText="{i18n>appDetails}" visible="false" backgroundDesign="Transparent"
+						class="sapUiResponsiveMargin" height="23rem" width="auto">
+						<core:Fragment fragmentName="ui.s2p.mm.requisition.maintain.s1.fragment.centralApproval" type="XML"/>
+					</Panel>
+				</l:content>
+			</l:Grid>
+			<l:Grid id="idNotesGrid" defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<Panel id="idPanelNotes" width="auto" backgroundDesign="Transparent" class="sapUiResponsiveMargin">
+						<headerToolbar>
+							<Toolbar>
+								<Title level="H2" text="{i18n>NOTES}" tooltip="{i18n>NOTES}"/>
+							</Toolbar>
+						</headerToolbar>
+						<IconTabBar id="idIconTabBarNoIcons" items="{Notes>/itemTextTypes}" expandable="false" expanded="true" applyContentPadding="false">
+							<items>
+								<IconTabFilter key="{Notes>key}" text="{Notes>name}">
+									<content>
+										<TextArea value="{Notes>value}" cols="400" id="textArea" rows="10" visible="true"/>
+									</content>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+					</Panel>
+				</l:content>
+			</l:Grid>
+		</semantic:content>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator id="idmessageLogPopoverBtn" press="showMessageLogPopover"/>
+		</semantic:messagesIndicator>
+		<semantic:customFooterContent>
+			<Button id="idSaveButton" enabled="{delete_ac}" press="onSaveBtnPress" text="{i18n>save}" tooltip="{i18n>save}" type="Emphasized"/>
+			<Button id="idApplychangeButton" press="onApplyChangeBtnPress" visible="{viewProperties>/saveAndChooseOtherItemsBtnVisible}"
+				enabled="{viewProperties>/saveAndChooseOtherItemsBtnEnabled}" text="{i18n>applyChanges}"/>
+			<Button id="idDeleteButton" enabled="{delete_ac}" press="onDeleteBtnPress" text="{i18n>overviewDelete}" type="Default"
+				ariaDescribedBy="defaultButtonDescription genericButtonDescription" class="sapUiSmallMarginEnd" tooltip="{i18n>overviewDelete}"/>
+		</semantic:customFooterContent>
+	</semantic:FullscreenPage>
+</View>

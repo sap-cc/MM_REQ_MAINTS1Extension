@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	id="fragCatHelp">
+	
+	<SelectDialog
+		title="{i18n>accCat}"
+		items="{accountcategory>/results}"
+		search=".onValueHelpSearch"
+		confirm=".onValueHelpClose"
+		cancel=".onValueHelpClose">
+		<StandardListItem
+			title="{accountcategory>AccountAssignmentCategory}"
+			info="{accountcategory>AcctAssignmentCategoryName}" />
+	</SelectDialog>
+
+</core:FragmentDefinition>

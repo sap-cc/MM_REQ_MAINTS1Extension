@@ -1,0 +1,234 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "http-stadler-s4d-200"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "http-stadler-s4d-200"
+    },
+    {
+      "path": "/resources/sap/se/mi/plm/lib/attachmentservice",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/plm_ath_cres1",
+        "preferLocal": true
+      },
+      "description": "sap/se/mi/plm/lib/attachmentservice Reuse Library"
+    },
+    {
+      "path": "/resources/sap/s4h/cfnd/featuretoggle",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/featuretoggles1",
+        "preferLocal": true
+      },
+      "description": "sap/s4h/cfnd/featuretoggle Reuse Library"
+    },
+    {
+      "path": "/resources/sap/io/bpm/sworkfloweditor/lib/reuse",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/nw_aps_bpm_lib",
+        "preferLocal": true
+      },
+      "description": "sap/io/bpm/sworkfloweditor/lib/reuse Reuse Library"
+    },
+    {
+      "path": "/resources/sap/ui/s2p/mm/lib/reuse/accounting",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/mm_reuse_accs1",
+        "preferLocal": true
+      },
+      "description": "sap/ui/s2p/mm/lib/reuse/accounting Reuse Library"
+    },
+    {
+      "path": "/resources/sap/s4/cfnd/lib/businessprocessflow",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/ca_ui_bpfs1",
+        "preferLocal": true
+      },
+      "description": "sap/s4/cfnd/lib/businessprocessflow Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/se/mi/plm/lib/attachmentservice",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/plm_ath_cres1",
+        "preferLocal": true
+      },
+      "description": "sap/se/mi/plm/lib/attachmentservice Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/s4h/cfnd/featuretoggle",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/featuretoggles1",
+        "preferLocal": true
+      },
+      "description": "sap/s4h/cfnd/featuretoggle Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/io/bpm/sworkfloweditor/lib/reuse",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/nw_aps_bpm_lib",
+        "preferLocal": true
+      },
+      "description": "sap/io/bpm/sworkfloweditor/lib/reuse Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/ui/s2p/mm/lib/reuse/accounting",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/mm_reuse_accs1",
+        "preferLocal": true
+      },
+      "description": "sap/ui/s2p/mm/lib/reuse/accounting Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/s4/cfnd/lib/businessprocessflow",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/ca_ui_bpfs1",
+        "preferLocal": true
+      },
+      "description": "sap/s4/cfnd/lib/businessprocessflow Reuse Library"
+    },
+    {
+      "path": "/webapp/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/webapp/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/dist/resources/sap/se/mi/plm/lib/attachmentservice",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/plm_ath_cres1",
+        "preferLocal": true
+      },
+      "description": "sap/se/mi/plm/lib/attachmentservice Reuse Library"
+    },
+    {
+      "path": "/dist/resources/sap/s4h/cfnd/featuretoggle",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/featuretoggles1",
+        "preferLocal": true
+      },
+      "description": "sap/s4h/cfnd/featuretoggle Reuse Library"
+    },
+    {
+      "path": "/dist/resources/sap/io/bpm/sworkfloweditor/lib/reuse",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/nw_aps_bpm_lib",
+        "preferLocal": true
+      },
+      "description": "sap/io/bpm/sworkfloweditor/lib/reuse Reuse Library"
+    },
+    {
+      "path": "/dist/resources/sap/ui/s2p/mm/lib/reuse/accounting",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/mm_reuse_accs1",
+        "preferLocal": true
+      },
+      "description": "sap/ui/s2p/mm/lib/reuse/accounting Reuse Library"
+    },
+    {
+      "path": "/dist/resources/sap/s4/cfnd/lib/businessprocessflow",
+      "target": {
+        "type": "destination",
+        "name": "http-stadler-s4d-200",
+        "entryPath": "/sap/bc/ui5_ui5/sap/ca_ui_bpfs1",
+        "preferLocal": true
+      },
+      "description": "sap/s4/cfnd/lib/businessprocessflow Reuse Library"
+    },
+    {
+      "path": "/dist/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/dist/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.90.7"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

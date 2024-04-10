@@ -1,0 +1,91 @@
+<core:FragmentDefinition
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	id="fragAccAssign">
+	<Dialog id="dlgAccAssign" 
+		title="{i18n>accCatTitle}"
+		escapeHandler=".onPopupClose">
+		<content>
+			
+			<Panel>
+				<content>
+					<Text text="{i18n>accCatText}" />
+				</content>
+			</Panel>
+			
+			<!--
+			<List
+				headerText="AccountAssignmentCategory"
+				items="{
+					path: 'accountcategory>/results'
+				}" >
+				<StandardListItem
+					title="{accountcategory>AccountAssignmentCategory}"
+					description="{accountcategory>AcctAssignmentCategoryName}" />
+			</List>
+			-->
+			
+			<form:SimpleForm 
+				editable="true" 
+				layout="ResponsiveGridLayout" 
+				labelSpanXL="3"
+				labelSpanL="3"
+				labelSpanM="3"
+				labelSpanS="12"
+				adjustLabelSpan="false"
+				emptySpanXL="4"
+				emptySpanL="4"
+				emptySpanM="4"
+				emptySpanS="0"
+				columnsXL="1"
+				columnsL="1"
+				columnsM="1"
+				singleContainerFullSize="false">
+				<form:content>
+					<Label text="{i18n>accCat}" />
+					<Input
+						id="inpAccCategory"
+						placeholder="{i18n>entercat}"
+						showValueHelp="true"
+						showSuggestion="true"
+						valueHelpRequest="onValueHelp"
+						submit="onSubmit"
+						suggest="onSubmit"
+						suggestionItemSelected="onSubmit"
+						suggestionItems="{accountcategory>/results}">
+						<suggestionItems>
+							<core:ListItem text="{accountcategory>AccountAssignmentCategory}" 
+								additionalText="{accountcategory>AcctAssignmentCategoryName}"
+								key="{accountcategory>AccountAssignmentCategory}" />
+						</suggestionItems>
+						<layoutData>
+							<l:GridData span="XL1 L2 M2 S4" />
+						</layoutData>
+					</Input>
+					<Text id="txtAccCategory" text="" />
+					
+					<Label text="{i18n>accObject}" />
+					<Input id="inpAccObject"
+						visible="false"
+						showValueHelp="true"
+						valueHelpRequest="onObjectValueHelp">
+						<layoutData>
+							<l:GridData span="XL1 L2 M2 S4" />
+						</layoutData>
+					</Input>
+				</form:content>
+			</form:SimpleForm>			
+
+		</content>
+		
+		<beginButton>
+			<Button id="btnSave" text="{i18n>apply}" type="Default" press="onPopupSave" />
+		</beginButton>
+		<endButton>
+			<Button id="btnClose" text="{i18n>cancel}" type="Default" press="onPopupClose" />
+		</endButton>
+	</Dialog>
+
+</core:FragmentDefinition>
